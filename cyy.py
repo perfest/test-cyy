@@ -16,7 +16,6 @@ desired_caps["noReset"] = "True"#不初始化手机app信息（类似不清楚�
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-
 time.sleep(3)
 print('微信启动成功')
 
@@ -79,3 +78,8 @@ driver.find_element_by_id('com.dealuck.cyy:id/btnLogin').click()
 time.sleep(5)
 
 driver.quit()
+
+
+
+
+
