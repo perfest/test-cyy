@@ -145,6 +145,10 @@ xclick()
 # elementclick()
 
 
+
+
+time.sleep(5)
+
 driver.quit()
 
 
