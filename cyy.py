@@ -158,6 +158,9 @@ time.sleep(1)
 element.elementclick(driver,77,900)
 # element.elementclick(driver,)
 time.sleep(1)
+element.swipeUp(driver,1000)
+time.sleep(1)
+element.swipeDown(driver,1000)
 driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
 time.sleep(1)
 
@@ -166,6 +169,10 @@ time.sleep(1)
 # 点击返回，回到我的页面
 element.elementclick(driver,280,900)
 # element.elementclick(driver,)
+time.sleep(1)
+element.swipeUp(driver,1000)
+time.sleep(1)
+element.swipeDown(driver,1000)
 time.sleep(1)
 driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
 time.sleep(1)
@@ -196,6 +203,11 @@ time.sleep(1)
 # 点击赞过 获取赞过的列表  上拉刷新列表的类容，下拉返回
 element.elementclick(driver,555,1050)
 time.sleep(1)
+element.swipeUp(driver,1000)
+time.sleep(1)
+element.swipeDown(driver,1000)
+time.sleep(1)
+
 
 
 
@@ -206,11 +218,9 @@ time.sleep(1)
 # 点击收藏下的内容，音乐，和话题
 element.elementclick(driver,540,1180)
 time.sleep(1)
+element.swipeUp(driver,1000)
 element.elementclick(driver,780,1180)
-
-
-
-
+element.swipeDown(driver,1000)
 
 
 

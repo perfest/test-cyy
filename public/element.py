@@ -18,7 +18,7 @@ def swipeDown(driver,t):
     l = getSize(driver)
     x1 = int(l[0] * 0.5)
     y1 = int(l[1] * 0.25)
-    y2 = int(l[1] * 0.6)
+    y2 = int(l[1] * 0.7)
     driver.swipe(x1, y1, x1, y2, t)
 
 # 屏幕向左滑动
