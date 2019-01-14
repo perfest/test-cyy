@@ -136,13 +136,14 @@ xclick()
 
 
 
-# def elementclick():
+
+# def public():
 #    l=getSize()
 #    x1=int(l[0]*0.46)
 #    y1=int(l[1]*0.83)
 #    driver.tap([(x1,y1)])
 #
-# elementclick()
+# public()
 
 
 

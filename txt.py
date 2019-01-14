@@ -115,7 +115,7 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 #   模拟手机按下屏幕一段时间,按就要对应着离开.
 #   方法：long_press(el=None, x=None, y=None, duration=1000)
 #   参数：
-#       1.element：被定位到的元素
+#       1.public：被定位到的元素
 #       2.x：通常会使用元素的X轴坐标
 #       3.y：通常会使用元素的Y轴坐标
 #       4.duration：持续时间，默认为1000ms
