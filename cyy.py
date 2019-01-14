@@ -23,7 +23,6 @@ print('微信启动成功')
 driver.close_app()
 
 # 跳转首页需要点击滑动页面
-
 def getSize():
     x = driver.get_window_size()['width']
     y = driver.get_window_size()['height']
@@ -36,12 +35,9 @@ def swipLeft(t):
    y1=int(l[1]*0.35)
    x2=int(l[0]*0.05)
    driver.swipe(x1,y1,x2,y1,t)
-
 swipLeft(1000)
-time.sleep(3)
+time.sleep(2)
 swipLeft(1000)
-
-
 
 time.sleep(2)
 
@@ -97,6 +93,7 @@ def saveclick():  # 550/1340
     y1 = int(l[1] * 0.7)
     driver.tap([(x1, y1)])
 saveclick()
+time.sleep(1)
 
 # 设置 845/158
 def stclick():
@@ -105,6 +102,7 @@ def stclick():
     y = int(l[1]*0.08)
     driver.tap([(x,y)])
 stclick()
+time.sleep(1)
 
 # 返回我的页面 70/160
 def rtclick():
@@ -113,6 +111,7 @@ def rtclick():
     y = int(l[1] *0.08)
     driver.tap([(x,y)])
 rtclick()
+time.sleep(1)
 
 # 分享 1010/162
 def shareclick():
@@ -121,6 +120,8 @@ def shareclick():
     y = int(l[1] * 0.08)
     driver.tap([(x,y)])
 shareclick()
+time.sleep(1)
+
 
 # 点x返回我的页面  1020/1187
 def xclick():
@@ -129,6 +130,84 @@ def xclick():
     y = int(l[1] * 0.61)
     driver.tap([(x, y)])
 xclick()
+time.sleep(1)
+
+# 点击用户昵称
+# 点击取消返回我的页面
+from public import element
+element.elementclick(driver,192,371)
+time.sleep(1)
+element.elementclick(driver,100,160)
+time.sleep(1)
+
+# 点击认证可以，返回我的页面
+element.elementclick(driver,200,465)
+time.sleep(1)
+element.elementclick(driver,100,160)
+time.sleep(1)
+# 点击用户头像进入个人资料编辑页面
+# 点击完成 保存编辑内容
+element.elementclick(driver,930,400)
+time.sleep(1)
+element.elementclick(driver,1010,162)
+time.sleep(1)
+
+# 点击关注 获取关注列表
+# 使用上拉滑动更新列表
+# 点击返回，回到我的页面
+element.elementclick(driver,77,900)
+# element.elementclick(driver,)
+time.sleep(1)
+driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
+time.sleep(1)
+
+# 点击粉丝获取粉丝列表
+# 上拉滑动更新列表
+# 点击返回，回到我的页面
+element.elementclick(driver,280,900)
+# element.elementclick(driver,)
+time.sleep(1)
+driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
+time.sleep(1)
+
+# 点击获赞 获取被赞数量
+# 点击确认 返回我的页面
+element.elementclick(driver,470,890)
+# element.elementclick(driver,)
+time.sleep(1)
+driver.find_element_by_id('com.dealuck.cyy:id/tv_ok').click()
+time.sleep(1)
+
+# 点击宠物卡，跳转宠物卡页面，
+# 向左滑动 if 页面中是否存在“添加宠物”存在 点击添加，不存在继续向右滑动 选择编辑 逻辑和添加一样
+# 点击添加宠物 编辑宠物资料
+# 获取input输入框 填入宠物名称，
+# 点击添加宠物头像，选择宠物头像
+# 选择宠物的性别
+# 选择宠物的品种
+# 选择宠物的出生日期
+# 选择是否绝育
+# 选择宠物的性格
+# 点击提交资料
+
+
+
+
+# 点击赞过 获取赞过的列表  上拉刷新列表的类容，下拉返回
+element.elementclick(driver,555,1050)
+time.sleep(1)
+
+
+
+# 点击收藏获取收藏的列表，选择收藏类目
+# 点击话题/音乐/内容 获取相应的列表信息，并上拉刷新，下拉返回
+element.elementclick(driver,900,1050)
+time.sleep(1)
+# 点击收藏下的内容，音乐，和话题
+element.elementclick(driver,540,1180)
+time.sleep(1)
+element.elementclick(driver,780,1180)
+
 
 
 
