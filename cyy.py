@@ -1,6 +1,7 @@
 from appium import webdriver
 import time
 
+from selenium.webdriver.support.wait import WebDriverWait
 
 desired_caps = {}  # 设备信息
 desired_caps['platformName'] = 'Android'
@@ -76,6 +77,73 @@ driver.find_element_by_id('com.dealuck.cyy:id/btnLogin').click()
 
 
 time.sleep(5)
+
+# 点击我的  990/1840
+def clickmy():
+    l = getSize()
+    x1 = int(l[0] * 0.91)
+    y1 = int(l[1] * 0.95)
+    driver.tap([(x1, y1)])
+
+clickmy()
+
+
+# 点击二维码
+driver.find_element_by_id('com.dealuck.cyy:id/iv_qr_code').click()
+time.sleep(1)
+def saveclick():  # 550/1340
+    l = getSize()
+    x1 = int(l[0] * 0.5)
+    y1 = int(l[1] * 0.7)
+    driver.tap([(x1, y1)])
+saveclick()
+
+# 设置 845/158
+def stclick():
+    l = getSize()
+    x = int(l[0]*0.78)
+    y = int(l[1]*0.08)
+    driver.tap([(x,y)])
+stclick()
+
+# 返回我的页面 70/160
+def rtclick():
+    l = getSize()
+    x = int(l[0]*0.06)
+    y = int(l[1] *0.08)
+    driver.tap([(x,y)])
+rtclick()
+
+# 分享 1010/162
+def shareclick():
+    l = getSize()
+    x = int(l[0] * 0.93)
+    y = int(l[1] * 0.08)
+    driver.tap([(x,y)])
+shareclick()
+
+# 点x返回我的页面  1020/1187
+def xclick():
+    l = getSize()
+    x = int(l[0] * 0.94)
+    y = int(l[1] * 0.61)
+    driver.tap([(x, y)])
+xclick()
+
+
+
+
+
+
+
+# def elementclick():
+#    l=getSize()
+#    x1=int(l[0]*0.46)
+#    y1=int(l[1]*0.83)
+#    driver.tap([(x1,y1)])
+#
+# elementclick()
+
 
 driver.quit()
 
