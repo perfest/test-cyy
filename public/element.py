@@ -38,5 +38,42 @@ def swipRight(driver,t):
     driver.swipe(x1, y1, x1, x2, t)
 
 
+# 坐标定位事件
+
+def elementclick(driver,w,h):
+   l=getSize()
+   xx = w / l[0]
+   yy = h / l[1]
+   x1=int(l[0]*xx)
+   y1=int(l[1]*yy)
+   driver.tap([(x1,y1)])
+
+# 返回我的页面
+def rtclick(driver,w,h):
+    l = getSize()
+    xx = w / l[0]
+    yy = h / l[1]
+    x1 = int(l[0] * xx)
+    y1 = int(l[1] * yy)
+    driver.tap([(x1, y1)])
+
+# 分享
+def shareclick(driver,w,h):
+    l = getSize()
+    xx = w / l[0]
+    yy = h / l[1]
+    x1 = int(l[0] * xx)
+    y1 = int(l[1] * yy)
+    driver.tap([(x1, y1)])
+
+# 页面中的 X
+def xclick(driver, w, h):
+    l = getSize()
+    xx = w / l[0]
+    yy = h / l[1]
+    x1 = int(l[0] * xx)
+    y1 = int(l[1] * yy)
+    driver.tap([(x1, y1)])
+
 
 
