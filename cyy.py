@@ -219,8 +219,10 @@ time.sleep(1)
 element.elementclick(driver,540,1180)
 time.sleep(1)
 element.swipeUp(driver,1000)
-element.elementclick(driver,780,1180)
+time.sleep(1)
 element.swipeDown(driver,1000)
+time.sleep(1)
+element.elementclick(driver,780,1180)
 
 
 
