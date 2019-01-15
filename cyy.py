@@ -145,10 +145,13 @@ element.elementclick(driver,200,465)
 time.sleep(1)
 element.elementclick(driver,100,160)
 time.sleep(1)
+
 # 点击用户头像进入个人资料编辑页面
-# 点击完成 保存编辑内容
 element.elementclick(driver,930,400)
 time.sleep(1)
+# 获取当前页面上的所有input输入框
+# 编辑资料sendkeys发送数据
+# 点击完成 保存编辑内容
 element.elementclick(driver,1010,162)
 time.sleep(1)
 
@@ -156,7 +159,6 @@ time.sleep(1)
 # 使用上拉滑动更新列表
 # 点击返回，回到我的页面
 element.elementclick(driver,77,900)
-# element.elementclick(driver,)
 time.sleep(1)
 element.swipeUp(driver,1000)
 time.sleep(1)
@@ -168,7 +170,6 @@ time.sleep(1)
 # 上拉滑动更新列表
 # 点击返回，回到我的页面
 element.elementclick(driver,280,900)
-# element.elementclick(driver,)
 time.sleep(1)
 element.swipeUp(driver,1000)
 time.sleep(1)
@@ -180,7 +181,6 @@ time.sleep(1)
 # 点击获赞 获取被赞数量
 # 点击确认 返回我的页面
 element.elementclick(driver,470,890)
-# element.elementclick(driver,)
 time.sleep(1)
 driver.find_element_by_id('com.dealuck.cyy:id/tv_ok').click()
 time.sleep(1)
@@ -223,10 +223,15 @@ time.sleep(1)
 element.swipeDown(driver,1000)
 time.sleep(1)
 element.elementclick(driver,780,1180)
-
-
-
 time.sleep(5)
+
+# 发布流程
+from publish import publishs
+publishs.release(driver)
+
+
+
+
 
 driver.quit()
 
