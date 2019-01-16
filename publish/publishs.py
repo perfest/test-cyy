@@ -8,6 +8,7 @@ def release(driver):
     element.elementclick(driver,'当前单击拍的位置坐标')
     element.elementclick(driver,'当前长按拍的位置坐标')
     element.elementclick(driver,'当前拍照页面的元素点击，并返回拍照页面')
+
     element.elementclick(driver,'当前上传的位置坐标')
     element.elementclick(driver,'点击视频，照片，取消')
     # 添加上下滑动事件

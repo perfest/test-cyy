@@ -150,7 +150,7 @@ time.sleep(1)
 element.elementclick(driver,930,400)
 time.sleep(1)
 # 获取当前页面上的所有input输入框
-# 编辑资料sendkeys发送数据
+# 编辑资料send_keys发送数据
 # 点击完成 保存编辑内容
 element.elementclick(driver,1010,162)
 time.sleep(1)
