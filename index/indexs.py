@@ -18,7 +18,7 @@ def indexclick(driver):
     '''
 
     print('马上点击搜索框')
-    element.elementclick(driver,450,320)
+    element.elementclick(driver,450,320)   # 有问题需要修复
     # driver.find_element_by_name('踩奶大作战').send_kesy('一百万')
     time.sleep(3)
     element.elementclick(driver,985,150)
