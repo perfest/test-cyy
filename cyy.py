@@ -1,7 +1,6 @@
-from appium import webdriver
 import time
 
-from selenium.webdriver.support.wait import WebDriverWait
+from appium import webdriver
 
 desired_caps = {}  # 设备信息
 desired_caps['platformName'] = 'Android'
@@ -178,7 +177,7 @@ time.sleep(1)
 # 点击关注 获取关注列表
 # 使用上拉滑动更新列表
 # 点击返回，回到我的页面
-element.elementclick(driver, 77, 900)
+element.elementclick(driver, 80, 1000)
 print('点击关注获取关注列表')
 time.sleep(1)
 element.swipeUp(driver, 1000)
@@ -191,7 +190,8 @@ time.sleep(1)
 # 点击粉丝获取粉丝列表
 # 上拉滑动更新列表
 # 点击返回，回到我的页面
-element.elementclick(driver, 280, 900)
+print('粉丝')
+element.elementclick(driver, 360, 1000)
 time.sleep(1)
 element.swipeUp(driver, 1000)
 time.sleep(1)
@@ -203,7 +203,8 @@ time.sleep(1)
 
 # 点击获赞 获取被赞数量
 # 点击确认 返回我的页面
-element.elementclick(driver, 470, 890)
+print('获赞')
+element.elementclick(driver, 650, 973)
 time.sleep(1)
 # driver.find_element_by_id('com.dealuck.cyy:id/tv_ok').click()
 element.elementclick(driver, 100, 160)
@@ -246,26 +247,7 @@ time.sleep(1)
 element.elementclick(driver, 780, 1180)
 time.sleep(3)
 
-# 发布流程
-from publish import publishs
 
-# publishs.release(driver)
-# print('开始执行➕发布功能')
-# from newpubulish import newpublishs
-# newpublishs.release(driver)
-# print('执行完毕')
-# driver.find_element_by_id('com.dealuck.cyy:id/ib_flip').click()
-# # driver.find_element_by_id('com.dealuck.cyy:id/tv_bgm').click()
-# time.sleep(2)
-# driver.find_element_by_id('com.dealuck.cyy:id/ib_flip').click()
-# time.sleep(1)
-# driver.find_element_by_id('com.dealuck.cyy:id/iv_ratio').click()
-# time.sleep(1)
-# # driver.find_element_by_id('com.dealuck.cyy:id/btn_record').click()
-# driver.find_element_by_id('com.dealuck.cyy:id/iv_filter').click()
-# time.sleep(1)
-# driver.find_element_by_id('com.dealuck.cyy:id/ib_close').click()
-# time.sleep(3)
 print("点击首页事件")
 from index import indexs
 indexs.indexclick(driver)
