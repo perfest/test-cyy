@@ -8,6 +8,8 @@ def indexclick(driver):
     list = [(100,200),(250,200),(450,200),(620,200),(770,200),(930,200)]
     for i in list:
         element.elementclick(driver,i[0],i[1])
+        time.sleep(1)
+        element.swipeDown(driver,1000)
         time.sleep(2)
         element.swipeUp(driver, 1000)  # 滑动事件
         time.sleep(1)
@@ -23,13 +25,20 @@ def indexclick(driver):
     time.sleep(3)
     element.elementclick(driver,985,150)
     time.sleep(1)
-    print('开始左右滑动事件')
-    for i in range(5):
-        element.swipLeft(driver,1000)
-        time.sleep(1)
 
-    for s in range(5):
-        element.swipRight(driver,1000)
-        time.sleep(1)
-    print('首页完成点击滑动事件')
+
+    #
+    # print('开始左右滑动事件')   # 左右滑动事件有出处
+    # for i in range(5):
+    #     element.swipLeft(driver,1000)
+    #     time.sleep(1)
+    #
+    # for s in range(5):
+    #     element.swipRight(driver,1000)
+    #     time.sleep(1)
+    # print('首页完成点击滑动事件')
+
+
+
+
 

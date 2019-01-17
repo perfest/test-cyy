@@ -26,13 +26,13 @@ def swipLeft(driver,t):
     l = getSize(driver)
     x1 = int(l[0] * 0.7)
     y1 = int(l[1] * 0.5)
-    x2 = int(l[1] * 0.3)
+    x2 = int(l[1] * 0.05)
     driver.swipe(x1, y1, x1, x2, t)
 
 # 屏幕向右滑动
 def swipRight(driver,t):
     l = getSize(driver)
-    x1 = int(l[0] * 0.3)
+    x1 = int(l[0] * 0.05)
     y1 = int(l[1] * 0.5)
     x2 = int(l[1] * 0.7)
     driver.swipe(x1, y1, x1, x2, t)

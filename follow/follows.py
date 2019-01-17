@@ -1,4 +1,4 @@
-
+import time
 
 # 关注页面的点击事件
 def followclick(driver):
@@ -10,6 +10,13 @@ def followclick(driver):
     5.关注icon，评论，分享，收藏
     6.主评论输入框
     7.上拉加载新的ugc
-
     '''
-    pass
+    from public import element
+    element.elementclick(driver,300,1880)
+    time.sleep(3)
+    element.swipeDown(driver, 1000)
+    time.sleep(2)
+    element.swipeUp(driver, 1000)  # 滑动事件
+    time.sleep(1)
+    element.swipeDown(driver, 1000)  # 下拉滑动事件
+    time.sleep(1)

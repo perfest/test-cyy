@@ -41,8 +41,10 @@ def swipLeft(t):
 swipLeft(1000)
 time.sleep(2)
 swipLeft(1000)
-
 time.sleep(2)
+
+
+
 
 # 开启宠优优app
 # 坐标获取当前需要点击的元素
@@ -54,8 +56,14 @@ print(x, -----y)
 a1 = 418 / x
 b1 = 820 / y
 driver.tap([(a1 * x, b1 * y)])
-
 time.sleep(2)
+
+
+
+
+
+
+
 # 点击关注
 # driver.find_element_by_xpath("//*[contains(@text,'关注'))]")
 x = driver.get_window_size()['width']  # 获取屏幕的宽度，x的最大值
@@ -83,8 +91,6 @@ def clickmy():
     x1 = int(l[0] * 0.91)
     y1 = int(l[1] * 0.95)
     driver.tap([(x1, y1)])
-
-
 clickmy()
 
 # 点击二维码
@@ -109,8 +115,6 @@ def stclick():
     x = int(l[0] * 0.78)
     y = int(l[1] * 0.08)
     driver.tap([(x, y)])
-
-
 stclick()
 time.sleep(1)
 
@@ -252,4 +256,17 @@ print("点击首页事件")
 from index import indexs
 indexs.indexclick(driver)
 
+# 有问题  目前不能使用
+# print('点击信息赞事件')
+# from information import message
+# message.messageclick(driver)
+
+from follow import follows
+follows.followclick(driver)
+
+print('点击事件完成')
 driver.quit()
+
+
+
+
