@@ -72,7 +72,8 @@ clickmy()
 # .press(x=508, y=465)
 # .move_to(x=-26, y=880)
 # .release()
-driver.press(x=508, y=465).move_to(x=-26, y=880)
+
+# driver.press(x=508, y=465).move_to(x=-26, y=880)
 time.sleep(2)
 '''点击二维码事件'''
 driver.tap([(683, 154)])
