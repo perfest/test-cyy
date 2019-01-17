@@ -20,3 +20,11 @@ def followclick(driver):
     time.sleep(1)
     element.swipeDown(driver, 1000)  # 下拉滑动事件
     time.sleep(1)
+
+
+
+
+
+
+
+
