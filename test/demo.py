@@ -66,12 +66,16 @@ def clickmy():
     y1 = int(l[1] * 0.95)
     driver.tap([(x1, y1)])
 clickmy()
-
-# print('点击二维码')
-# driver.find_element(by.id('resource-id'),value='com.dealuck.cyy:id/iv_qr_code')
-# print('点击完成')
-# driver.press(x=240,y=600).wait(100).move_to(x=100,y=100).release().perform()
 time.sleep(5)
+
+# xpath定位首页
+# driver.find_element_by_xpath(xpath=('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout')).click()
+
+
+
+
+
+
 driver.quit()
 
 

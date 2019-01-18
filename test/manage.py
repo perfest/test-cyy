@@ -67,15 +67,10 @@ def clickmy():
     driver.tap([(x1, y1)])
 clickmy()
 
-'''我的滑动事件'''
-# TouchAction(driver)
-# .press(x=508, y=465)
-# .move_to(x=-26, y=880)
-# .release()
-
-# driver.press(x=508, y=465).move_to(x=-26, y=880)
+'''我的下拉刷新滑动事件'''
 element.swipeDown(driver,1000)
 time.sleep(2)
+
 '''点击二维码事件'''
 driver.tap([(683, 154)])
 time.sleep(1)
@@ -130,9 +125,11 @@ time.sleep(1)
 driver.tap([(90, 184)])
 time.sleep(1)
 driver.tap([(80,150)])
-driver.tap([(80,150)])
+driver.tap([(65,160)])
 time.sleep(3)
 # 设置页面没有退出  需要修改
+
+
 
 '''编辑资料，点击头像，昵称，取消，完成，关注，粉丝，获赞，宠物卡，作品，赞过，收藏，内容，话题，音乐'''
 # 编辑资料，点击头像，昵称，取消，完成，

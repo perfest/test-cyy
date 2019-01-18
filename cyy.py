@@ -44,8 +44,6 @@ swipLeft(1000)
 time.sleep(2)
 
 
-
-
 # 开启宠优优app
 # 坐标获取当前需要点击的元素
 x = driver.get_window_size()['width']  # 获取屏幕的宽度，x的最大值
@@ -57,11 +55,6 @@ a1 = 418 / x
 b1 = 820 / y
 driver.tap([(a1 * x, b1 * y)])
 time.sleep(2)
-
-
-
-
-
 
 
 # 点击关注
@@ -93,176 +86,15 @@ def clickmy():
     driver.tap([(x1, y1)])
 clickmy()
 
-# 点击二维码
-driver.find_element_by_id('com.dealuck.cyy:id/iv_qr_code').click()
-time.sleep(1)
+from my_index import my
+dr = my.Myclick(driver)
+dr.erweima()
+dr.sting()
 
-
-def saveclick():  # 550/1340
-    l = getSize()
-    x1 = int(l[0] * 0.5)
-    y1 = int(l[1] * 0.7)
-    driver.tap([(x1, y1)])
-
-
-saveclick()
-time.sleep(1)
-
-
-# 设置 845/158
-def stclick():
-    l = getSize()
-    x = int(l[0] * 0.78)
-    y = int(l[1] * 0.08)
-    driver.tap([(x, y)])
-stclick()
-time.sleep(1)
-
-
-# 返回我的页面 70/160
-def rtclick():
-    l = getSize()
-    x = int(l[0] * 0.06)
-    y = int(l[1] * 0.08)
-    driver.tap([(x, y)])
-
-
-rtclick()
-time.sleep(1)
-
-
-# 分享 1010/162
-def shareclick():
-    l = getSize()
-    x = int(l[0] * 0.93)
-    y = int(l[1] * 0.08)
-    driver.tap([(x, y)])
-
-
-shareclick()
-time.sleep(1)
-
-
-# 点x返回我的页面  1020/1187
-def xclick():
-    l = getSize()
-    x = int(l[0] * 0.94)
-    y = int(l[1] * 0.61)
-    driver.tap([(x, y)])
-
-
-xclick()
-time.sleep(1)
-
-# 点击用户昵称
-# 点击取消返回我的页面
-from public import element
-
-element.elementclick(driver, 192, 371)
-time.sleep(1)
-element.elementclick(driver, 100, 160)
-time.sleep(1)
-
-# 点击认证可以，返回我的页面
-element.elementclick(driver, 200, 465)
-time.sleep(1)
-element.elementclick(driver, 100, 160)
-time.sleep(1)
-
-# 点击用户头像进入个人资料编辑页面
-element.elementclick(driver, 930, 400)
-time.sleep(1)
-# 获取当前页面上的所有input输入框
-# 编辑资料send_keys发送数据
-# 点击完成 保存编辑内容
-element.elementclick(driver, 1010, 162)
-time.sleep(1)
-
-# 点击关注 获取关注列表
-# 使用上拉滑动更新列表
-# 点击返回，回到我的页面
-element.elementclick(driver, 80, 1000)
-print('点击关注获取关注列表')
-time.sleep(1)
-element.swipeUp(driver, 1000)
-time.sleep(1)
-element.swipeDown(driver, 1000)
-# driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
-element.elementclick(driver, 100, 160)
-time.sleep(1)
-
-# 点击粉丝获取粉丝列表
-# 上拉滑动更新列表
-# 点击返回，回到我的页面
-print('粉丝')
-element.elementclick(driver, 360, 1000)
-time.sleep(1)
-element.swipeUp(driver, 1000)
-time.sleep(1)
-element.swipeDown(driver, 1000)
-time.sleep(1)
-element.elementclick(driver, 100, 160)
-# driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
-time.sleep(1)
-
-# 点击获赞 获取被赞数量
-# 点击确认 返回我的页面
-print('获赞')
-element.elementclick(driver, 650, 973)
-time.sleep(1)
-# driver.find_element_by_id('com.dealuck.cyy:id/tv_ok').click()
-element.elementclick(driver, 100, 160)
-time.sleep(1)
-
-# 点击宠物卡，跳转宠物卡页面，
-# 向左滑动 if 页面中是否存在“添加宠物”存在 点击添加，不存在继续向右滑动 选择编辑 逻辑和添加一样
-# 点击添加宠物 编辑宠物资料
-# 获取input输入框 填入宠物名称，
-# 点击添加宠物头像，选择宠物头像
-# 选择宠物的性别
-# 选择宠物的品种
-# 选择宠物的出生日期
-# 选择是否绝育
-# 选择宠物的性格
-# 点击提交资料
-
-
-
-
-# 点击赞过 获取赞过的列表  上拉刷新列表的类容，下拉返回
-element.elementclick(driver, 555, 1050)
-time.sleep(1)
-element.swipeUp(driver, 1000)
-time.sleep(1)
-element.swipeDown(driver, 1000)
-time.sleep(1)
-
-# 点击收藏获取收藏的列表，选择收藏类目
-# 点击话题/音乐/内容 获取相应的列表信息，并上拉刷新，下拉返回
-element.elementclick(driver, 900, 1050)
-time.sleep(1)
-# 点击收藏下的内容，音乐，和话题
-element.elementclick(driver, 540, 1180)
-time.sleep(1)
-element.swipeUp(driver, 1000)
-time.sleep(1)
-element.swipeDown(driver, 1000)
-time.sleep(1)
-element.elementclick(driver, 780, 1180)
-time.sleep(3)
-
-
-print("点击首页事件")
+'''跳转首页节奏上有问题设置页面还是没有退出'''
 from index import indexs
-indexs.indexclick(driver)
-
-# 有问题  目前不能使用
-# print('点击信息赞事件')
-# from information import message
-# message.messageclick(driver)
-
-from follow import follows
-follows.followclick(driver)
+dri = indexs.indexclick(driver)
+dri.pbclick()
 
 print('点击事件完成')
 driver.quit()
