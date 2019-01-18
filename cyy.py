@@ -86,10 +86,12 @@ def clickmy():
     driver.tap([(x1, y1)])
 clickmy()
 
+
 from my_index import my
 dr = my.Myclick(driver)
 dr.erweima()
 dr.sting()
+dr.ziliao()
 
 '''跳转首页节奏上有问题设置页面还是没有退出'''
 from index import indexs
