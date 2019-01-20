@@ -7,6 +7,8 @@ class indexclick:
         self.driver = driver
 
     def pbclick(self):
+        self.driver.tap([(100,1850)])
+        time.sleep(3)
         self.driver.tap([(299, 192)])
         time.sleep(3)
         self.driver.tap([(452, 205)])

@@ -78,13 +78,13 @@ driver.find_element_by_id('com.dealuck.cyy:id/btnLogin').click()
 time.sleep(5)
 
 
-# 点击我的  990/1840
-def clickmy():
-    l = getSize()
-    x1 = int(l[0] * 0.91)
-    y1 = int(l[1] * 0.95)
-    driver.tap([(x1, y1)])
-clickmy()
+# # 点击我的  990/1840
+# def clickmy():
+#     l = getSize()
+#     x1 = int(l[0] * 0.91)
+#     y1 = int(l[1] * 0.95)
+#     driver.tap([(x1, y1)])
+# clickmy()
 
 '''我的模块点击事件'''
 from my_index import my
@@ -92,7 +92,6 @@ dr = my.Myclick(driver)
 dr.erweima()
 dr.sting()
 dr.ziliao()
-dr.Slide()
 
 '''跳转首页节奏上有问题设置页面还是没有退出'''
 from index import indexs

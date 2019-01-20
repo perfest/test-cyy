@@ -1,3 +1,4 @@
+import time
 # 元素滑动事件 获取界面大小
 def getSize(driver):
     x = driver.get_window_size()['width']
@@ -46,6 +47,25 @@ def elementclick(driver,w,h):
    x1=int(l[0]*xx)
    y1=int(l[1]*yy)
    driver.tap([(x1,y1)])
+
+
+# 滑动事件
+def si(driver):
+    swipeUp(driver,1000)
+    time.sleep(3)
+    swipeDown(driver,1000)
+    time.sleep(3)
+    swipeDown(driver, 1000)
+    time.sleep(3)
+    swipeDown(driver, 1000)
+    time.sleep(3)
+    swipeUp(driver, 1000)
+    time.sleep(3)
+    swipeUp(driver, 1000)
+    time.sleep(3)
+    swipeUp(driver, 1000)
+    time.sleep(3)
+
 
 
 

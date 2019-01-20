@@ -58,19 +58,23 @@ b1 = 820 / y
 driver.tap([(a1 * x, b1 * y)])
 time.sleep(2)
 
+# 点击我的事件
+from my_index import my
+dr = my.Myclick(driver)
+dr.erweima()
+dr.sting()
+dr.ziliao()
+dr.Slide()
 
-# 点击我的  990/1840
-def clickmy():
-    l = getSize()
-    x1 = int(l[0] * 0.91)
-    y1 = int(l[1] * 0.95)
-    driver.tap([(x1, y1)])
-clickmy()
-time.sleep(5)
 
-from follow import follows
-dr = follows.foll(driver)
-dr.followclick()
+# 首页点击事件需要优化
+# from index import indexs
+# dr = indexs.indexclick(driver)
+# dr.pbclick()
+
+# from follow import follows
+# dr = follows.foll(driver)
+# dr.followclick()
 
 time.sleep(2)
 driver.quit()
