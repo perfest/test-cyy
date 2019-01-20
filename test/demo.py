@@ -68,14 +68,10 @@ def clickmy():
 clickmy()
 time.sleep(5)
 
-# xpath定位首页
-# driver.find_element_by_xpath(xpath=('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout')).click()
 
 
 
-
-
-
+time.sleep(2)
 driver.quit()
 
 

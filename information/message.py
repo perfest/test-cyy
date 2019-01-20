@@ -1,47 +1,110 @@
 
 import time
 # 信息中的点击事件
-def messageclick(driver):
-    '''信息模块下的点击事件
-    1.点赞，获取点赞的列表，可向上拉，加载更多
-    2.粉丝，获取当前用户的粉丝
-    3.评论，获取当前用户的评论或被评论
-    4.系统消息
-    5.系统公告
-    '''
-    # 1.点赞
-    from public import element
-    element.elementclick(driver,950,1850)
-    time.sleep(1)
-    element.elementclick(driver,200,400)
-    time.sleep(1)
-    # 向上拉动查看事件 次数自定义
-    element.swipeUp(driver,1000)
-    time.sleep(1)
-    '''点击头像跳转个人主页位置
-        点击热点区跳转到详情页面     评论详情页/作品详情页
-        评论页下拉可以刷新
-        判断有子评论，点击子评论区域可以跳转子评论主页
-        点击评论内容调起键盘/回复输入框
-        点赞评论  icon 高亮 ➕1
-    '''
-    element.swipeDown(driver,1000)
-    time.sleep(1)
-    element.elementclick(driver,100,350) # 用户头像
-    time.sleep(1)
-    element.elementclick(driver,35,180)
-    time.sleep(1)
-    element.elementclick(driver,300,330) # 用户昵称
-    time.sleep(1)
-    element.elementclick(driver,35,180)
-    time.sleep(1)
-    element.elementclick(driver,300,400) # 点赞了你的评论/作品
-    time.sleep(1)
-    element.elementclick(driver,35,180)
-    time.sleep(1)
-    element.elementclick(driver,1000,350) # 热点区，跳转评论/作品详情页
-    time.sleep(1)
-    element.elementclick(driver,35,180)
-    time.sleep(3)
+class msg:
+    def __init__(self,driver):
+        self.driver = driver
+    def msgclick(self):
+        # 赞列表中的操作事件
+        self.driver.tap([(747, 1857)])
+        time.sleep(3)
+        self.driver.tap([(179, 414)])
+        time.sleep(3)
+        self.driver.tap([(132, 376)])
+        time.sleep(3)
+        self.driver.tap([(982, 376)])
+        time.sleep(3)
+        self.driver.tap([(367, 367)])
+        time.sleep(3)
+        self.driver.tap([(77, 188)])
+        time.sleep(3)
+        self.driver.tap([(965, 380)])
+        time.sleep(3)
+        self.driver.tap([(77, 192)])
+        time.sleep(3)
+        self.driver.tap([(77, 179)])
+        time.sleep(3)
+        # 粉丝列表下的操作事件
+        self.driver.tap([(542, 452)])
+        time.sleep(3)
+        self.driver.tap([(124, 388)])
+        time.sleep(3)
+        self.driver.tap([(81, 909)])
+        time.sleep(3)
+        self.driver.tap([(931, 384)])
+        time.sleep(3)
+        self.driver.tap([(935, 397)])
+        time.sleep(3)
+        self.driver.tap([(213, 1144)])
+        time.sleep(3)
+        self.driver.tap([(935, 393)])
+        time.sleep(3)
+        self.driver.tap([(862, 1148)])
+        time.sleep(3)
+        self.driver.tap([(73, 184)])
+        time.sleep(3)
+        self.driver.tap([(342, 896)])
+        time.sleep(3)
+        self.driver.tap([(137, 384)])
+        time.sleep(3)
+        self.driver.tap([(68, 175)])
+        time.sleep(3)
+        self.driver.tap([(926, 384)])
+        time.sleep(3)
+        self.driver.tap([(213, 1153)])
+        time.sleep(3)
+        self.driver.tap([(909, 363)])
+        time.sleep(3)
+        self.driver.tap([(858, 1127)])
+        time.sleep(3)
+        self.driver.tap([(909, 363)])
+        time.sleep(3)
+        self.driver.tap([(77, 184)])
+        time.sleep(3)
+        self.driver.tap([(640, 892)])
+        time.sleep(3)
+        self.driver.tap([(534, 1276)])
+        time.sleep(3)
+        self.driver.tap([(73, 179)])
+        time.sleep(3)
+        self.driver.tap([(68, 171)])
+        time.sleep(3)
+        # 评论列表中的点击事件
+        self.driver.tap([(871, 435)])
+        time.sleep(3)
+        self.driver.tap([(444, 410)])
+        time.sleep(3)
+        self.driver.tap([(982, 376)])
+        time.sleep(3)
+        self.driver.tap([(990, 354)])
+        time.sleep(3)
+        self.driver.tap([(98, 324)])
+        time.sleep(3)
+        self.driver.tap([(73, 166)])
+        time.sleep(3)
+        self.driver.tap([(73, 188)])
+        time.sleep(3)
+        self.driver.tap([(107, 342)])
+        time.sleep(3)
+        self.driver.tap([(73, 166)])
+        time.sleep(3)
+        self.driver.tap([(918, 380)])
+        time.sleep(3)
+        self.driver.tap([(81, 179)])
+        time.sleep(3)
+        self.driver.tap([(64, 175)])
+        time.sleep(3)
+        # 点击系统消息和系统公告
+        self.driver.tap([(307, 811)])
+        time.sleep(2)
+        self.driver.tap([(73, 171)])
+        time.sleep(2)
+        self.driver.tap([(307, 1020)])
+        time.sleep(2)
+        self.driver.tap([(68, 179)])
+        time.sleep(2)
+
+
+
 
 

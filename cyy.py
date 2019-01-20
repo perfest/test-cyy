@@ -92,11 +92,18 @@ dr = my.Myclick(driver)
 dr.erweima()
 dr.sting()
 dr.ziliao()
+dr.Slide()
 
 '''跳转首页节奏上有问题设置页面还是没有退出'''
 from index import indexs
 dri = indexs.indexclick(driver)
 dri.pbclick()
+
+from information import message
+driv = message.msg(driver)
+driv.msgclick()
+
+
 
 print('点击事件完成')
 driver.quit()
