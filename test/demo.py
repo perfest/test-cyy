@@ -68,8 +68,9 @@ def clickmy():
 clickmy()
 time.sleep(5)
 
-
-
+from follow import follows
+dr = follows.foll(driver)
+dr.followclick()
 
 time.sleep(2)
 driver.quit()

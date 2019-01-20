@@ -86,7 +86,7 @@ def clickmy():
     driver.tap([(x1, y1)])
 clickmy()
 
-
+'''我的模块点击事件'''
 from my_index import my
 dr = my.Myclick(driver)
 dr.erweima()
@@ -99,9 +99,16 @@ from index import indexs
 dri = indexs.indexclick(driver)
 dri.pbclick()
 
+'''信息模块点击事件'''
 from information import message
 driv = message.msg(driver)
 driv.msgclick()
+
+'''关注模块点击事件'''
+from follow import follows
+drive = follows.foll(driver)
+drive.followclick()
+
 
 
 
