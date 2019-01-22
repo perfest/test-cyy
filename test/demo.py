@@ -64,7 +64,8 @@ dr = my.Myclick(driver)
 dr.erweima()
 dr.sting()
 dr.ziliao()
-dr.Slide()
+
+# 点击到首页，然后滑动测试
 
 
 # 首页点击事件需要优化
