@@ -66,6 +66,19 @@ def si(driver):
     swipeUp(driver, 1000)
     time.sleep(3)
 
+def validate_id(driver, value):
+    ls = driver.find_elements_by_id(value)
+    if len(ls)==0:
+        return 'NG'
+    else:
+        return 'OK'
+
+def validate_class(driver, value):
+    ll = driver.find_elements_by_calss_name(value)
+    if len(ll)==0:
+        return 'NG'
+    else:
+        return 'OK'
 
 
 

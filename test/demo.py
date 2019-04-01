@@ -58,14 +58,50 @@ b1 = 820 / y
 driver.tap([(a1 * x, b1 * y)])
 time.sleep(2)
 
-# 点击我的事件
-from my_index import my
-dr = my.Myclick(driver)
-dr.erweima()
-dr.sting()
-dr.ziliao()
 
-# 点击到首页，然后滑动测试
+# lists = driver.find_element_by_name('推荐')
+lists = driver.find_elements_by_class_name('android.widget.TextView')
+# driver.find_elements_by_name()
+# size = lists.size
+# if size > 0 :
+for i in lists:
+    l = i.text
+    print(l)
+
+# # 点击我的事件
+# from my_index import my
+# dr = my.Myclick(driver)
+# dr.erweima()
+# dr.sting()
+# dr.ziliao()
+# time.sleep(3)
+
+driver.tap([(960,1840)])
+time.sleep(2)
+
+# 点击页面的  设置   com.dealuck.cyy:id/iv_setting
+# driver.find_element_by_id('com.dealuck.cyy:id/iv_setting').click()
+# print('点击设置完成')
+# time.sleep(3)
+
+
+# 获取当前界面上的所有class为  android.widget.ImageView
+ls = driver.find_elements_by_class_name('android.widget.ImageView')
+print(ls)
+print('---------------------------------------------------------------')
+for i in ls:
+    print(i.tag_name)
+
+print('点击设置成功')
+
+
+
+
+#
+#
+
+#
+# # 点击到首页，然后滑动测试
 
 
 # 首页点击事件需要优化
