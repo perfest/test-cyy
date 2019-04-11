@@ -50,7 +50,7 @@ def elementclick(driver,w,h):
 
 
 # 滑动事件
-def si(driver):
+def swipe_up(driver):
     swipeUp(driver,1000)
     time.sleep(3)
     swipeDown(driver,1000)
@@ -68,19 +68,32 @@ def si(driver):
 
 def validate_id(driver, value):
     ls = driver.find_elements_by_id(value)
-    if len(ls)==0:
+    if 0 == len(ls):
         return 'NG'
     else:
         return 'OK'
 
 def validate_class(driver, value):
     ll = driver.find_elements_by_calss_name(value)
-    if len(ll)==0:
+    if 0 == len(ll):
+        return 'NG'
+    else:
+        return 'OK'
+
+def validate_xpath(driver, value):
+    xp = driver.find_elements_by_xpath(value)
+    if 0 == len(xp):
         return 'NG'
     else:
         return 'OK'
 
 
-
-
+'''
+1、消息，单视频详情页
+2、消息，单图文详情页
+3、图文视频混合页
+4、图文详情列表页
+5、沉浸式详情页
+6、品种详情页
+'''
 

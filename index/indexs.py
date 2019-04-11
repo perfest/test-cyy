@@ -1,4 +1,6 @@
 import time
+from public import element
+from public import info
 
 # 首页点击事件
 class indexclick:
@@ -6,130 +8,124 @@ class indexclick:
     def __init__(self,driver):
         self.driver = driver
 
-    def pbclick(self):
-        self.driver.tap([(100,1850)])
-        time.sleep(3)
-        self.driver.tap([(299, 192)])
-        time.sleep(3)
-        self.driver.tap([(452, 205)])
-        time.sleep(3)
-        self.driver.tap([(610, 196)])
-        time.sleep(3)
-        self.driver.tap([(760, 205)])
-        time.sleep(3)
-        self.driver.tap([(918, 196)])
-        time.sleep(3)
-        self.driver.tap([(324, 316)])
-        time.sleep(3)
-        self.driver.tap([(986, 290)])
-        time.sleep(3)
-        self.driver.tap([(60, 218)])
-        time.sleep(3)
-        self.driver.tap([(452, 154)])
-        time.sleep(3)
-        self.driver.tap([(777, 1490)])
-        time.sleep(3)
-        self.driver.tap([(743, 1161)])
-        time.sleep(3)
-        self.driver.tap([(973, 149)])
-        time.sleep(3)
-        self.driver.tap([(329, 273)])
-        time.sleep(3)
-        self.driver.tap([(521, 273)])
-        time.sleep(3)
-        self.driver.tap([(760, 286)])
-        time.sleep(3)
-        self.driver.tap([(978, 286)])
-        time.sleep(3)
-        self.driver.tap([(384, 406)])
-        time.sleep(3)
-        self.driver.tap([(68, 171)])
-        time.sleep(3)
-        self.driver.tap([(538, 273)])
-        time.sleep(3)
-        self.driver.tap([(149, 444)])
-        time.sleep(3)
-        self.driver.tap([(81, 184)])
-        time.sleep(3)
-        self.driver.tap([(901, 452)])
-        time.sleep(3)
-        self.driver.tap([(871, 461)])
-        time.sleep(3)
-        self.driver.tap([(243, 1127)])
-        time.sleep(3)
-        self.driver.tap([(862, 465)])
-        time.sleep(3)
-        self.driver.tap([(854, 1135)])
-        time.sleep(3)
-        self.driver.tap([(320, 273)])
-        time.sleep(3)
-        self.driver.tap([(683, 760)])
-        time.sleep(3)
-        self.driver.tap([(867, 324)])
-        time.sleep(3)
-        self.driver.tap([(1012, 324)])
-        time.sleep(3)
-        self.driver.tap([(1020, 1187)])
-        time.sleep(3)
-        self.driver.tap([(98, 337)])
-        time.sleep(3)
-        self.driver.tap([(81, 171)])
-        time.sleep(3)
-        self.driver.tap([(90, 175)])
-        time.sleep(3)
-        self.driver.tap([(111, 286)])
-        time.sleep(3)
-        self.driver.tap([(973, 145)])
-        time.sleep(3)
-        self.driver.tap([(1003, 316)])
-        time.sleep(3)
-        self.driver.tap([(978, 154)])
-        time.sleep(3)
-        self.driver.tap([(77, 184)])
-        time.sleep(3)
-        self.driver.tap([(80, 180)])
-        time.sleep(3)
+    def indclick(self):
+        self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]').click()
+        time.sleep(3)   # 首页
+        ind1 = element.validate_id(self.driver,'com.dealuck.cyy:id/ll_top')
+        if 'OK' == ind1:
+            print('ind1执行成功-------%s' % ind1)
+        else:
+            print('ind1执行失败-------%s' % ind1)
 
-        self.driver.tap([(448, 1302)])
-        time.sleep(3)
-        self.driver.tap([(952, 1306)])
-        time.sleep(3)
-        self.driver.tap([(649, 1311)])
-        time.sleep(3)
-        self.driver.tap([(68, 184)])
-        time.sleep(3)
-        self.driver.tap([(132, 1306)])
-        time.sleep(3)
-        self.driver.tap([(81, 179)])
-        time.sleep(3)
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_scan').click()
+        time.sleep(3)   # 扫一扫
+        inde = info.infos(self.driver)
+        inde.syis()
 
-        self.driver.tap([(448, 1302)])
-        time.sleep(3)
-        self.driver.tap([(952, 1306)])
-        time.sleep(3)
-        self.driver.tap([(649, 1311)])
-        time.sleep(3)
-        self.driver.tap([(68, 184)])
-        time.sleep(3)
-        self.driver.tap([(132, 1306)])
-        time.sleep(3)
-        self.driver.tap([(81, 179)])
-        time.sleep(3)
-        self.driver.tap([(397, 777)])
-        time.sleep(3)
-        self.driver.tap([(858, 324)])
-        time.sleep(3)
-        self.driver.tap([(1016, 329)])
-        time.sleep(3)
-        self.driver.tap([(1020, 1182)])
-        time.sleep(3)
-        self.driver.tap([(137, 303)])
-        time.sleep(3)
-        self.driver.tap([(85, 184)])
-        time.sleep(3)
-        self.driver.tap([(73, 184)])
-        time.sleep(3)
+        self.driver.find_element_by_id('com.dealuck.cyy:id/rl_search').click()
+        time.sleep(3)     # 搜索
+        inde.es()
 
+        c = 1
+        while c < 2:
+            for i in range(1, 8):
+                self.driver.find_element_by_xpath(
+                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % i).click()
+                time.sleep(2)  # 正序点击tab
+                print('当前点击第 %s 个' % i)
+            d = 6
+            for m in range(1, 5):
+                self.driver.find_element_by_xpath(
+                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % (
+                        d - m)).click()
+                time.sleep(2)  # 倒序点击tab
+                print('当前点击第 %s 个' % m)
+            c += 1
+
+        inde.validate_ugc()    # 校验确保是视频
+
+        ind17 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_bgm')
+        if 'OK' == ind17:
+            print('ind17当前页面有音乐存在----%s' % ind17)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_bgm').click()
+            time.sleep(3)  # 有音乐存在
+            self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
+            time.sleep(2)  # 返回  音乐详情后期在➕
+        else:
+            print('ind17当前页面没有音乐存在----%s' % ind17)
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
+        time.sleep(3)  # 更多
+        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_cancel').click()
+        time.sleep(2)  # 取消弹框
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_header').click()
+        time.sleep(3)  # 用户头像
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
+        time.sleep(3)  # 返回ugc详情页
+
+        ind18 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_follow')
+        if 'OK' == ind18:
+            print('ind18当前ugc的作者未关注他，现在关注-------%s' % ind18)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/tv_follow').click()
+            time.sleep(2)  # 未关注的关注按钮
+        else:
+            print('ind18当前ugc的作者已经关注，页面没有关注-----%s' % ind18)
+
+        ind19 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_commodity')
+        if 'OK' == ind19:
+            print('ind19当前ugc有商品-------%s' % ind19)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
+            time.sleep(2)  # 商品标签
+            '''正文'''
+        else:
+            print('ind19当前ugc无商品-------%s' % ind19)
+
+        # self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment').click()
+        # time.sleep(2)    #  评论输入框
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/ll_comment').click()
+        time.sleep(3)  # 评论
+        ind20 = element.validate_xpath(self.driver,
+                                       '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]')
+        if 'OK' == ind20:
+            self.driver.find_element_by_xpath(
+                '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]').click()
+            time.sleep(3)  # 评论点赞
+        else:
+            pass
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_comment_close').click()
+        time.sleep(3)  # 取消
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/ll_like').click()
+        time.sleep(2)  # 点赞
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
+        time.sleep(2)  # 返回
+
+        ind21 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_follow')
+        # 校验当前ugc的作者是否是我关注的人
+        if 'OK' == ind21:
+            print('ind21当前ugc作者是我关注的用户-----%s' % ind21)
+        else:
+            print('ind21当前ugc作者不是我关注的用户---%s' % ind21)
+
+        self.driver.find_element_by_xpath(
+            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
+        time.sleep(3)  # 用户头像
+        ind22 = element.validate_id(self.driver, 'com.dealuck.cyy:id/magic_indicator')
+        if 'OK' == ind22:
+            print('ind22当前ugc作者是我关注的用户-----%s' % ind22)
+        else:
+            print('ind22当前ugc作者不是我关注的用户---%s' % ind22)
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
+        time.sleep(3)  # 返回
+
+        self.driver.find_element_by_xpath(
+            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
+        time.sleep(3)  # 点赞
+
+        print('当前还是停留在首页')
 
 
 
