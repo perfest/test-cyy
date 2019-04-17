@@ -10,7 +10,7 @@ class msg:
 
     def msgclick(self):
         # 赞列表中的操作事件
-        self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[4]').click()
+        self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[4]').click()
         time.sleep(2)
         msg1 = element.validate_id(driver=self.driver,value='com.dealuck.cyy:id/tv_title')
         if msg1 == 'OK':
@@ -167,10 +167,22 @@ class msg:
         # self.driver.find_element_by_id('com.dealuck.cyy:id/ll_tags').click()
         # time.sleep(2)   # 点击品种  现在品种页，无法获取页面上的返回按钮
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_summary').click()
-        time.sleep(2)    # 点击全文
-        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_summary').click()
-        time.sleep(2)  # 再次点击全文，收起全文展示
+        msg16 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_commodity')
+        if 'OK' == msg16:
+            print('msg16当前ugc有商品-------%s' % msg16)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
+            time.sleep(2)  # 商品标签
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 点击全文
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 再次点击全文，收起全文展示
+            '''正文'''
+        else:
+            print('msg16当前ugc无商品-------%s' % msg16)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 点击全文
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 再次点击全文，收起全文展示
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment').send_keys(u"7654321")
         time.sleep(2)    # 点击页面输入框
@@ -231,15 +243,29 @@ class msg:
         time.sleep(2)
         # 需要注意的是这里点击的ugc详情页话题，可能有些ugc上没有话题品种地址之类的标签
         # self.driver.find_element_by_id('com.dealuck.cyy:id/ll_topic').click()
-        # time.sleep(2)    # 滑动以后点击话题进入详情页   话题页，上部是一整个view  无法获取返回按钮
+        # time.sleep(2)    # 滑动
+        #
+        # 以后点击话题进入详情页   话题页，上部是一整个view  无法获取返回按钮
 
         # self.driver.find_element_by_id('com.dealuck.cyy:id/ll_tags').click()
         # time.sleep(2)   # 点击品种  现在品种页，无法获取页面上的返回按钮
+        msg17 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_commodity')
+        if 'OK' == msg17:
+            print('msg17当前ugc有商品-------%s' % msg17)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
+            time.sleep(2)  # 商品标签
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 点击全文
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 再次点击全文，收起全文展示
+            '''正文'''
+        else:
+            print('msg17当前ugc无商品-------%s' % msg17)
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 点击全文
+            self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+            time.sleep(2)  # 再次点击全文，收起全文展示
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_summary').click()
-        time.sleep(2)  # 点击全文
-        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_summary').click()
-        time.sleep(2)  # 再次点击全文，收起全文展示
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment').send_keys(u'000')
         time.sleep(2)  # 点击页面输入框

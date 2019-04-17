@@ -5,11 +5,12 @@ from public import info
 # 首页点击事件
 class indexclick:
     # 首页点击事件
-    def __init__(self,driver):
+    def __init__(self,driver,desired_caps):
         self.driver = driver
+        self.desired_caps = desired_caps
 
     def indclick(self):
-        self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]').click()
+        self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]').click()
         time.sleep(3)   # 首页
         ind1 = element.validate_id(self.driver,'com.dealuck.cyy:id/ll_top')
         if 'OK' == ind1:
@@ -26,23 +27,64 @@ class indexclick:
         time.sleep(3)     # 搜索
         inde.es()
 
+        self.driver.find_element_by_xpath(
+            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
+        time.sleep(3)  # 用户头像
+        ind22 = element.validate_id(self.driver, 'com.dealuck.cyy:id/magic_indicator')
+        if 'OK' == ind22:
+            print('ind22当前ugc作者是我关注的用户-----%s' % ind22)
+        else:
+            print('ind22当前ugc作者不是我关注的用户---%s' % ind22)
+        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
+        time.sleep(3)  # 返回
+
+        if 'LE67A06190312448' == self.desired_caps['deviceName']:
+            if 'OK' == element.validate_xpath(self.driver,
+                                              '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]'):
+                self.driver.find_element_by_xpath(
+                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
+                time.sleep(3)  # 点赞
+            else:
+                pass
+        elif 'b83ae0c0' == self.desired_caps['deviceName']:
+            if 'OK' == element.validate_xpath(self.driver,
+                                              '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout[2]'):
+                self.driver.find_element_by_xpath(
+                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout[2]').click()
+                time.sleep(2)  # 正序点击tab
+            else:
+                pass
+
         c = 1
         while c < 2:
             for i in range(1, 8):
-                self.driver.find_element_by_xpath(
-                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % i).click()
-                time.sleep(2)  # 正序点击tab
-                print('当前点击第 %s 个' % i)
+                if 'LE67A06190312448' == self.desired_caps['deviceName']:
+                    self.driver.find_element_by_xpath(
+                        '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % i).click()
+
+                    time.sleep(2)  # 正序点击tab
+                    print('当前点击第 %s 个' % i)
+                elif 'b83ae0c0' == self.desired_caps['deviceName']:
+                    self.driver.find_element_by_xpath(
+                        '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % i).click()
+                    time.sleep(2)  # 正序点击tab
+                    print('当前点击第 %s 个' % i)
             d = 6
             for m in range(1, 5):
-                self.driver.find_element_by_xpath(
-                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % (
-                        d - m)).click()
-                time.sleep(2)  # 倒序点击tab
-                print('当前点击第 %s 个' % m)
+                if 'LE67A06190312448' == self.desired_caps['deviceName']:
+                    self.driver.find_element_by_xpath(
+                        '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % (
+                            d - m)).click()
+                    time.sleep(2)  # 倒序点击tab
+                    print('当前点击第 %s 个' % m)
+                elif 'b83ae0c0' == self.desired_caps['deviceName']:
+                    self.driver.find_element_by_xpath(
+                        '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[%d]' % (
+                            d - m)).click()
+                    time.sleep(2)  # 倒序点击tab
+                    print('当前点击第 %s 个' % m)
             c += 1
-
-        inde.validate_ugc()    # 校验确保是视频
+        inde.validate_ugc()  # 校验确保是视频
 
         ind17 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_bgm')
         if 'OK' == ind17:
@@ -110,22 +152,8 @@ class indexclick:
         else:
             print('ind21当前ugc作者不是我关注的用户---%s' % ind21)
 
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
-        time.sleep(3)  # 用户头像
-        ind22 = element.validate_id(self.driver, 'com.dealuck.cyy:id/magic_indicator')
-        if 'OK' == ind22:
-            print('ind22当前ugc作者是我关注的用户-----%s' % ind22)
-        else:
-            print('ind22当前ugc作者不是我关注的用户---%s' % ind22)
-        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
-        time.sleep(3)  # 返回
-
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
-        time.sleep(3)  # 点赞
-
         print('当前还是停留在首页')
+
 
 
 

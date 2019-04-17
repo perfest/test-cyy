@@ -1,24 +1,26 @@
 import time
 from public import element
+import re
 
 
 class infos():
     def __init__(self, driver):
         self.driver = driver
 
+    # 品种详情
     def breedinfo(self):
-        pic18 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_big_title')
-        if 'OK' == pic18:
-            print('pic18执行成功--------%s' % pic18)
+        info1 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_big_title')
+        if 'OK' == info1:
+            print('info1执行成功--------%s' % info1)
         else:
-            print('pic18执行失败--------%s' % pic18)
+            print('info1执行失败--------%s' % info1)
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
         time.sleep(3)  # 分享
-        pic19 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/rcv1')
-        if 'OK' == pic19:
-            print('pic19执行成功--------%s' % pic19)
+        info2 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/rcv1')
+        if 'OK' == info2:
+            print('info2执行成功--------%s' % info2)
         else:
-            print('pic19执行失败--------%s' % pic19)
+            print('info2执行失败--------%s' % info2)
         self.driver.find_element_by_id('com.dealuck.cyy:id/tv_cancel').click()
         time.sleep(2)  # 取消
 
@@ -37,11 +39,11 @@ class infos():
         self.driver.find_element_by_xpath(
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
         time.sleep(2)  # 点击第一个ugc
-        pic20 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
-        if 'OK' == pic20:
-            print('pic20执行成功--------%s' % pic20)
+        info3 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
+        if 'OK' == info3:
+            print('info3执行成功--------%s' % info3)
         else:
-            print('pic20执行失败--------%s' % pic20)
+            print('info3执行失败--------%s' % info3)
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(3)  # 返回品种详情
 
@@ -54,11 +56,11 @@ class infos():
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
             time.sleep(3)    # 点击头像
-        pic21 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_user_name')
-        if 'OK' == pic21:
-            print('pic21执行成功--------%s' % pic21)
+        info4 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_user_name')
+        if 'OK' == info4:
+            print('info4执行成功--------%s' % info4)
         else:
-            print('pic21执行失败--------%s' % pic21)
+            print('info4执行失败--------%s' % info4)
         self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
         time.sleep(2)  # 返回品种详情
         self.driver.find_element_by_xpath(
@@ -69,18 +71,18 @@ class infos():
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView[3]').click()
         time.sleep(3)  # 点人气榜
 
-        pic22 = element.validate_xpath(self.driver,
+        info5 = element.validate_xpath(self.driver,
                                        value='/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout')
-        if 'OK' == pic22:
-            print('pic22该品种有上榜者-------%s' % pic22)
+        if 'OK' == info5:
+            print('info5该品种有上榜者-------%s' % info5)
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.RelativeLayout').click()
             time.sleep(3)  # 点金牌区域 进入个人首页
-            pic23 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_user_name')
-            if 'OK' == pic23:
-                print('pic23执行成功--------%s' % pic23)
+            info6 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_user_name')
+            if 'OK' == info6:
+                print('info6执行成功--------%s' % info6)
             else:
-                print('pic23执行失败--------%s' % pic23)
+                print('info6执行失败--------%s' % info6)
             self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
             time.sleep(2)  # 返回品种主页
             self.driver.find_element_by_xpath(
@@ -91,45 +93,46 @@ class infos():
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
             time.sleep(3)  # 返回上一级进入的页面
         else:
-            print('pic21该品种没有上榜者--------%s' % pic21)
+            print('info5该品种没有上榜者--------%s' % info5)
 
+    # 话题详情
     def picinfo(self):
-        pic25 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_detail')
-        if 'OK' == pic25:
-            print('pic25执行成功---------%s' % pic25)
+        info7 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_detail')
+        if 'OK' == info7:
+            print('info7执行成功---------%s' % info7)
         else:
-            print('pic25执行失败---------%s' % pic25)
+            print('info7执行失败---------%s' % info7)
         print('当前话题的介绍是-----%s' % self.driver.find_element_by_id('com.dealuck.cyy:id/tv_detail').text)
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
         time.sleep(2)  # 分享
-        pic27 = element.validate_xpath(self.driver, 'com.dealuck.cyy:id/share2')
-        if 'OK' == pic27:
-            print('pic27执行成功---------%s' % pic27)
+        info8 = element.validate_xpath(self.driver, 'com.dealuck.cyy:id/share2')
+        if 'OK' == info8:
+            print('info8执行成功---------%s' % info8)
         else:
-            print('pic27执行失败---------%s' % pic27)
+            print('info8执行失败---------%s' % info8)
         self.driver.find_element_by_xpath(
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout').click()
         time.sleep(3)  # 收藏
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/ll_join').click()
         time.sleep(3)  # 参与发布
-        pic28 = element.validate_id(self.driver, 'com.dealuck.cyy:id/fl_left')
-        if 'OK' == pic28:
-            print('pic28执行成功---------%s' % pic28)
+        info9 = element.validate_id(self.driver, 'com.dealuck.cyy:id/fl_left')
+        if 'OK' == info9:
+            print('info9执行成功---------%s' % info9)
         else:
-            print('pic28执行失败---------%s' % pic28)
+            print('info9执行失败---------%s' % info9)
         self.driver.find_element_by_id('com.dealuck.cyy:id/ib_close').click()
         time.sleep(3)  # 返回话题详情页
 
         self.driver.find_element_by_xpath(
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]').click()
         time.sleep(3)  # 点击第一个ugc
-        pic29 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_title')
-        if 'OK' == pic29:
-            print('pic29执行成功---------%s' % pic29)
+        info10 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_title')
+        if 'OK' == info10:
+            print('info10执行成功---------%s' % info10)
         else:
-            print('pic29执行失败---------%s' % pic29)
+            print('info10执行失败---------%s' % info10)
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(3)  # 返回话题详情
 
@@ -149,19 +152,19 @@ class infos():
         time.sleep(2)  # 返回
 
     def es(self):
-        ind5 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_cancel')
-        if 'OK' == ind5:
-            print('ind5执行成功---------%s ' % ind5)
+        info11 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_cancel')
+        if 'OK' == info11:
+            print('info11执行成功---------%s ' % info11)
         else:
-            print('ind5执行失败---------%s ' % ind5)
+            print('info11执行失败---------%s ' % info11)
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/rl_hot_keyword').click()
         time.sleep(2)  # 热门搜索
-        ind6 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/iv_bg')
-        if 'OK' == ind6:
-            print('ind6执行成功---------%s ' % ind6)
+        info12 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/iv_bg')
+        if 'OK' == info12:
+            print('info12执行成功---------%s ' % info12)
         else:
-            print('ind6执行失败---------%s ' % ind6)
+            print('info12执行失败---------%s ' % info12)
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(2)  # 返回搜索页面
 
@@ -185,12 +188,12 @@ class infos():
             time.sleep(8)  # 点击内容tab下的第一个ugc
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
             time.sleep(2)  # 点击更多，弹框提示分享渠道
-            ind7 = element.validate_xpath(driver=self.driver,
+            info13 = element.validate_xpath(driver=self.driver,
                                           value='/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]')
-            if 'OK' == ind7:
-                print('ind7执行成功--------%s' % ind7)
+            if 'OK' == info13:
+                print('info13执行成功--------%s' % info13)
             else:
-                print('ind7执行失败--------%s' % ind7)
+                print('info13执行失败--------%s' % info13)
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]').click()
             time.sleep(2)  # 收藏
@@ -199,23 +202,23 @@ class infos():
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]').click()
             time.sleep(2)  # 下载视频
-            ind8 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/rl_tips')
-            if 'OK' == ind8:
-                print('ind8执行成功--------%s' % ind8)
+            info14 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/rl_tips')
+            if 'OK' == info14:
+                print('info14执行成功--------%s' % info14)
             else:
-                print('ind8执行失败--------%s' % ind8)
+                print('info14执行失败--------%s' % info14)
             time.sleep(8)
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
             time.sleep(2)  # 点击更多，弹框提示分享渠道
             self.driver.find_element_by_xpath(
                 '	/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[4]').click()
             time.sleep(2)  # 举报
-            ind9 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
+            info15 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
             time.sleep(2)
-            if 'OK' == ind9:
-                print('ind9执行成功--------%s' % ind9)
+            if 'OK' == info15:
+                print('info15执行成功--------%s' % info15)
             else:
-                print('ind9执行失败--------%s' % ind9)
+                print('info15执行失败--------%s' % info15)
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.RadioButton').click()
             time.sleep(2)  # 选中选项
@@ -238,8 +241,8 @@ class infos():
             self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
             time.sleep(2)  # 返回视频页
 
-            ind17 = element.validate_id(self.driver, 'com.dealuck.cyy:id/fl_article')
-            if 'OK' == ind17:
+            info16 = element.validate_id(self.driver, 'com.dealuck.cyy:id/fl_article')
+            if 'OK' == info16:
                 self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
                 time.sleep(2)  # 点击正文跳转
             else:
@@ -248,11 +251,11 @@ class infos():
                 self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
                 time.sleep(2)  # 点击正文跳转
 
-            ind11 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_title_user')
-            if 'OK' == ind11:
-                print('ind11执行成功--------%s' % ind11)
+            info17 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_title_user')
+            if 'OK' == info17:
+                print('info17执行成功--------%s' % info17)
             else:
-                print('ind11执行失败--------%s' % ind11)
+                print('info17执行失败--------%s' % info17)
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
             time.sleep(2)  # 返回视频页
 
@@ -272,18 +275,18 @@ class infos():
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_clear').click()
         time.sleep(2)  # 清除输入框的内容
-        ind12 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_content').text
-        if '呆萌' != ind12:
-            print('ind12执行成功--------%s ' % ind12)
+        info18 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_content').text
+        if '呆萌' != info18:
+            print('info18执行成功--------%s ' % info18)
         else:
-            print('ind12执行失败--------%s ' % ind12)
+            print('info18执行失败--------%s ' % info18)
         self.driver.find_element_by_id('com.dealuck.cyy:id/tv_history_clear').click()
         time.sleep(2)  # 清除历史数据
-        ind13 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_history_clear')
-        if 'OK' != ind13:
-            print('ind13执行成功---------%s' % ind13)
+        info19 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_history_clear')
+        if 'OK' != info19:
+            print('info19执行成功---------%s' % info19)
         else:
-            print('ind13执行失败---------%s' % ind13)
+            print('info19执行失败---------%s' % info19)
         self.driver.find_element_by_id('com.dealuck.cyy:id/ll_title').click()
         time.sleep(2)  # 话题详情页
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
@@ -298,22 +301,22 @@ class infos():
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/ll_join').click()
         time.sleep(2)  # 话题参与发布
-        ind14 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/btn_record')
-        if 'OK' == ind14:
-            print('ind14执行成功---------%s' % ind14)
+        info20 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/btn_record')
+        if 'OK' == info20:
+            print('info20执行成功---------%s' % info20)
         else:
-            print('ind14执行失败---------%s' % ind14)
+            print('info20执行失败---------%s' % info20)
         self.driver.find_element_by_id('com.dealuck.cyy:id/ib_close').click()
         time.sleep(2)  # 返回话题主页
 
         self.driver.find_element_by_xpath(
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]').click()
         time.sleep(2)  # 话题页，第一个ugc
-        ind15 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
-        if 'OK' == ind15:
-            print('ind15执行成功---------%s' % ind15)
+        info21 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
+        if 'OK' == info21:
+            print('info21执行成功---------%s' % info21)
         else:
-            print('ind15执行失败---------%s' % ind15)
+            print('info21执行失败---------%s' % info21)
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(2)  # 返回话题主页
@@ -321,11 +324,11 @@ class infos():
         self.driver.find_element_by_xpath(
             '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.ImageView').click()
         time.sleep(2)  # 用户头像
-        ind16 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/magic_indicator')
-        if 'OK' == ind16:
-            print('ind16执行成功---------%s' % ind16)
+        info22 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/magic_indicator')
+        if 'OK' == info22:
+            print('info22执行成功---------%s' % info22)
         else:
-            print('ind16执行失败---------%s' % ind16)
+            print('info22执行失败---------%s' % info22)
         self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
         time.sleep(2)  # 返回话题
 
@@ -338,43 +341,45 @@ class infos():
         self.driver.find_element_by_id('com.dealuck.cyy:id/tv_cancel').click()
         time.sleep(3)  # 返回到进入搜索的一级页面
 
+    # 扫一扫
     def syis(self):
-        ind2 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
-        if 'OK' == ind2:
-            print('ind2执行成功--------%s' % ind2)
+        info23 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_title')
+        if 'OK' == info23:
+            print('info23执行成功--------%s' % info23)
         else:
-            print('ind2执行失败--------%s' % ind2)
+            print('info23执行失败--------%s' % info23)
         self.driver.find_element_by_id('com.dealuck.cyy:id/tv_my_code').click()
         time.sleep(3)  # 我的二维码
         self.driver.find_element_by_id('com.dealuck.cyy:id/fl_close').click()
         time.sleep(2)  # X掉
-        ind3 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/fl_close')
-        if 'NG' == ind3:
-            print('ind3执行成功--------%s' % ind3)
+        info24 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/fl_close')
+        if 'NG' == info24:
+            print('info24执行成功--------%s' % info24)
         else:
-            print('ind3执行失败--------%s' % ind3)
+            print('info24执行失败--------%s' % info24)
         self.driver.find_element_by_id('com.dealuck.cyy:id/tv_right').click()
         time.sleep(3)  # 相册
-        ind4 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_des')
-        if 'OK' == ind4:
-            print('ind4执行成功--------%s' % ind4)
+        info25 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/tv_des')
+        if 'OK' == info25:
+            print('info25执行成功--------%s' % info25)
         else:
-            print('ind4执行失败--------%s' % ind4)
+            print('info25执行失败--------%s' % info25)
         self.driver.find_element_by_id('com.dealuck.cyy:id/btn_back').click()
         time.sleep(3)  # 返回扫一扫
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_left').click()
         time.sleep(2)  # 返回第一级
 
+    # 单视频（沉静式）
     def oneugc(self):
-        ind17 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_bgm')
-        if 'OK' == ind17:
-            print('ind17当前页面有音乐存在----%s' % ind17)
+        info26 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_bgm')
+        if 'OK' == info26:
+            print('info26当前页面有音乐存在----%s' % info26)
             self.driver.find_element_by_id('com.dealuck.cyy:id/ll_bgm').click()
             time.sleep(3)  # 有音乐存在
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
             time.sleep(2)  # 返回  音乐详情后期在➕
         else:
-            pass
+            print('info26当前页面没有音乐存在----%s' % info26)
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
         time.sleep(3)  # 更多
@@ -386,31 +391,31 @@ class infos():
         self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
         time.sleep(3)  # 返回ugc详情页
 
-        ind18 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_follow')
-        if 'OK' == ind18:
-            print('ind18当前ugc的作者未关注他，现在关注-------%s' % ind18)
+        info27 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_follow')
+        if 'OK' == info27:
+            print('info27当前ugc的作者未关注他，现在关注-------%s' % info27)
             self.driver.find_element_by_id('com.dealuck.cyy:id/tv_follow').click()
             time.sleep(2)  # 未关注的关注按钮
         else:
-            print('ind18当前ugc的作者已经关注，页面没有关注-----%s' % ind18)
+            print('info27当前ugc的作者已经关注，页面没有关注-----%s' % info27)
 
-        ind19 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_commodity')
-        if 'OK' == ind19:
-            print('ind19当前ugc有商品-------%s' % ind19)
+        info28 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_commodity')
+        if 'OK' == info28:
+            print('info28当前ugc有商品-------%s' % info28)
             self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
             time.sleep(2)  # 商品标签
             '''正文'''
         else:
-            print('ind19当前ugc无商品-------%s' % ind19)
+            print('info28当前ugc无商品-------%s' % info28)
 
         # self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment').click()
         # time.sleep(2)    #  评论输入框
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/ll_comment').click()
         time.sleep(3)  # 评论
-        ind20 = element.validate_xpath(self.driver,
+        info29 = element.validate_xpath(self.driver,
                                        '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]')
-        if 'OK' == ind20:
+        if 'OK' == info29:
             self.driver.find_element_by_xpath(
                 '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]').click()
             time.sleep(3)  # 评论点赞
@@ -425,12 +430,14 @@ class infos():
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(2)  # 返回
 
+    # 校验是否是视频
     def validate_ugc(self):
-        ind23 = element.validate_id(self.driver, 'com.dealuck.cyy:id/iv_cover_play')
-        if 'OK' == ind23:
-            print('ind23是视频------%s' % ind23)
+        info30 = element.validate_id(self.driver, 'com.dealuck.cyy:id/iv_cover_play')
+        if 'OK' == info30:
+            print('info30是视频------%s' % info30)
             self.driver.find_element_by_id('com.dealuck.cyy:id/iv_cover_play').click()
             time.sleep(3)  # 确保是视频
+            '''需要添加不是视频对图片的处理方式'''
         else:
             while True:
                 element.swipeUp(self.driver, 2000)
@@ -442,3 +449,122 @@ class infos():
                     break
                 else:
                     pass
+
+    # 图文视频混合详情
+    def ugc_list(self):
+        '''
+        是否多张照片、是否是视频、是否是单张图片
+        消息页的单视频，单图文、沉浸式的单视频默认展开是显示评论内容，需要单独梳理
+        :return:
+        '''
+
+    # 图文列表列
+    def ugc_png_list(self):
+        '''
+        处理图片列表页的逻辑
+        :return:
+        '''
+
+    # 单视频（非沉静式）
+    def ugc(self):
+        '''
+        处理单ugc的逻辑，需要区分视频和图文
+        :return:
+        '''
+
+    # 单图文
+    def ugc_png(self):
+        pass
+
+    def validate_ugcs(self):
+        info31 = element.validate_id(self.driver,'com.dealuck.cyy:id/tv_num')       # 校验图片的张数元素
+        info32 = element.validate_id(self.driver,'com.dealuck.cyy:id/iv_full')      # 校验视频的全屏元素
+        if 'OK' == info31:
+            print('info31是多张图片------%s' % info31)
+        elif 'OK' == info32:
+            print('info32是视频----------%s' % info32)
+        else:
+            print('info31是单张图片------%s' % info31)
+
+    def addres(self):
+        '''地址点击返回  第三方界面，每个手机的元素不一样不做点击'''
+
+
+    def mc(self):
+        '''音乐详情点击'''
+        info33 = element.validate_id(self.driver, 'com.dealuck.cyy:id/rl_cover')   # 音乐播放按钮
+        if 'OK' == info33:
+            print('info33执行成功-------%s' % info33)
+        else:
+            print('info33执行失败-------%s' % info33)
+        print('当前音乐的名字是----------%s' % self.driver.find_element_by_id('com.dealuck.cyy:id/tv_big_title').text)
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_favorite').click()
+        time.sleep(3)    # 收藏
+        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_share').click()
+        time.sleep(3)    # 分享
+        info34 = element.validate_id(self.driver,'com.dealuck.cyy:id/tv_cancel')
+        if 'OK' == info34:
+            print('info34执行成功-------%s' % info34)
+        else:
+            print('info34执行失败-------%s' % info34)
+        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_cancel').click()
+        time.sleep(2)     # 取消
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_play_status').click()
+        time.sleep(10)     # 让音乐播放一会儿
+
+        info35 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_video_no').text  # 校验音乐中是否存在作品
+        if int(info35) > 0:
+            print('当前音乐中作品数为----------%s' % info35)
+            info35 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_big_title').text
+            info36 = re.findall(r'原声',info35)
+            if [] == info36:
+                '''非原创'''
+                info38 = element.validate_xpath(self.driver,'/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.ImageView[2]')
+                if 'OK' == info38:
+                    print('非原创音乐视频---------%s' % info38)
+                else:
+                    print('非原创音乐图片---------%s' % info38)
+                self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]').click()
+                time.sleep(3)   # 点击第一个ugc
+
+                self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
+                time.sleep(3)   # 返回
+                self.driver.find_element_by_xpath(
+                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
+                time.sleep(3)  # 点击用户头像
+                self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
+                time.sleep(3)   # 返回
+                '''点赞这里是有参与的按钮会覆盖不好判断，暂时不做操作事件'''
+            else:
+                '''原创作品'''
+                info37 = element.validate_id(self.driver,'com.dealuck.cyy:id/iv_cover_play')
+                if 'OK' == info37:
+                    print('原创音乐视频---------%s' % info37)
+                else:
+                    print('原创音乐图片---------%s' % info37)
+                self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]').click()
+                time.sleep(3)
+                self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
+                time.sleep(3)  # 返回
+                self.driver.find_element_by_id('com.dealuck.cyy:id/ll_profile').click()
+                time.sleep(3)  # 点击用户头像
+                self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
+                time.sleep(3)  # 返回
+        else:
+            print('当前音乐中作品数为----------%s' % info35)
+            info36 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_state').text
+            print('存在空白页----------%s' % info36)
+
+        self.driver.find_element_by_id('com.dealuck.cyy:id/ll_join').click()
+        time.sleep(3)    # 参与
+        '''这是调用发布功能'''
+        from publish import publishs
+        pub = publishs.releas(self.driver)
+        pub.release()
+
+        # self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
+        # time.sleep(3)  # 返回
+
+        print('执行完毕')

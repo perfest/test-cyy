@@ -1,5 +1,7 @@
 import time
 from public import info
+from public import element
+from publish import publishs
 
 
 
@@ -9,101 +11,134 @@ class test_demo:
         self.desired_caps = desired_caps
 
     def demos(self):
-        from public import element
 
-        ind23 = element.validate_id(self.driver,'com.dealuck.cyy:id/iv_cover_play')
-        if 'OK' == ind23:
-            print('ind23是视频------%s' % ind23)
-            self.driver.find_element_by_id('com.dealuck.cyy:id/iv_cover_play').click()
-            time.sleep(3)   # 确保是视频
-        else:
+        # 单视频（非沉静式）
+        '''
+        处理单ugc的逻辑，需要区分视频和图文
+        :return:
+        '''
+        # self.inf = info.infos(self.driver)
 
-            while True:
-                element.swipeUp(self.driver,2000)
-                time.sleep(5)
+        # 图文  非评论入口
+        # info33 = element.validate_id(self.driver,'com.dealuck.cyy:id/load_more_load_end_view')    # 只有评论页进来才会默认展示评论
+        # if 'OK' == info33:
+        #     print('info33执行成功------%s' % info33)
+        # else:
+        #     print('info33执行失败------%s' % info33)
+        #
+        # element.swipeDown(self.driver,2000)
+        # time.sleep(3)
+        # element.swipeDown(self.driver, 2000)
+        # time.sleep(3)
+        # element.swipeDown(self.driver, 2000)
+        # time.sleep(3)
 
-                if 'OK' == element.validate_id(self.driver,'com.dealuck.cyy:id/iv_cover_play'):
-                    self.driver.find_element_by_id('com.dealuck.cyy:id/iv_cover_play').click()
-                    time.sleep(2)
-                    break
-                else:
-                    pass
-        ind17 = element.validate_id(self.driver,'com.dealuck.cyy:id/ll_bgm')
-        if 'OK' == ind17:
-            print('ind17当前页面有音乐存在----%s' % ind17)
-            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_bgm').click()
-            time.sleep(3)  # 有音乐存在
-            self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
-            time.sleep(2)   # 返回  音乐详情后期在➕
-        else:
-            print('ind17当前页面没有音乐存在----%s' % ind17)
+    #     info31 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_num')    # 图片只有一张
+    #     if 'OK' == info31:
+    #         print('info31执行成功------%s' % info31)
+    #         # 单张
+    #
+    #
+    #
+    #     else:
+    #         print('info31执行失败------%s' % info31)
+    #         # 多张
+    #
+    #
+    #
+    # def clicks(self):
+    #     info36 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_title_user')  # title
+    #     if 'OK' == info36:
+    #         print('info36执行成功--------%s' % info36)
+    #     else:
+    #         print('info36执行失败--------%s' % info36)
+    #
+    #     info37 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_tags')
+    #     if 'OK' == info37:
+    #         print('info37-页面存在品种标签-----实现点击' % info37)
+    #         self.inf.breedinfo()  # 品种详情页点击
+    #     else:
+    #         pass
+    #
+    #     info38 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_topic')
+    #     if 'OK' == info38:
+    #         print('info38-页面存在话题标签------实现点击' % info38)
+    #         self.inf.picinfo()  # 话题详情页点击
+    #
+    #     info39 = element.validate_id(self.driver, 'com.dealuck.cyy:id/ll_bgm')
+    #     if 'OK' == info39:
+    #         print('info39-页面存在音乐标签------实现点击' % info39)
+    #         self.inf.mc()     # 音乐详情点击
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back')      # 返回进入的一级页面
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_title_user')    # title
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more')     # 更多，弹框分享渠道
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_tags')     # 品种标签 跳转品种详情页
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_topic')     # 话题标签
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_address')    # 地址标签
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_bgm')     # 音乐是否标签
+    #
+    #     '''商品暂时不做校验'''
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment')    # 说点儿什么输入框
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_comment')   # 评论
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/ll_share')    # 分享
+    #
+    #     self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]')
+    #     # 点赞
+    #
+    #     self.driver.find_element_by_id('com.dealuck.cyy:id/tv_comment_title')      # 评论的title    用正则 提出字符串中的数字，对上划做判断
+    #
+    #
+    #
+    #     import re
+    #     info34 = self.driver.find_element_by_id('com.dealuck.cyy:id/tv_comment_title').text
+    #     info35 = re.findall(r'\d+',info34)
+    #     if int(info35[0]) < 3:
+    #         for i in range(3):
+    #             element.swipeDown(self.driver,2000)
+    #             time.sleep(3)
+    #             i += 1       # 翻页到顶部 查看页面上的元素
+    #     else:
+    #         for j in range(int(info35[0]) // 3):
+    #             element.swipeUp(self.driver,2000)
+    #             time.sleep(3)
+    #             j += 1     # 查看评论的内容
+    #
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_more').click()
-        time.sleep(3)  # 更多
-        self.driver.find_element_by_id('com.dealuck.cyy:id/tv_cancel').click()
-        time.sleep(2)   # 取消弹框
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_header').click()
-        time.sleep(3)     # 用户头像
-        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
-        time.sleep(3)    # 返回ugc详情页
+        cy = info.infos(self.driver)
+        cy.mc()
 
-        ind18 = element.validate_id(self.driver,'com.dealuck.cyy:id/tv_follow')
-        if 'OK' == ind18:
-            print('ind18当前ugc的作者未关注他，现在关注-------%s' % ind18)
-            self.driver.find_element_by_id('com.dealuck.cyy:id/tv_follow').click()
-            time.sleep(2)    # 未关注的关注按钮
-        else:
-            print('ind18当前ugc的作者已经关注，页面没有关注-----%s' % ind18)
 
-        ind19 = element.validate_id(self.driver,'com.dealuck.cyy:id/ll_commodity')
-        if 'OK' == ind19:
-            print('ind19当前ugc有商品-------%s' % ind19)
-            self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
-            time.sleep(2)  # 商品标签
-            '''正文'''
-        else:
-            print('ind19当前ugc无商品-------%s' % ind19)
 
-        # self.driver.find_element_by_id('com.dealuck.cyy:id/rl_comment').click()
-        # time.sleep(2)    #  评论输入框
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/ll_comment').click()
-        time.sleep(3)  # 评论
-        ind20 = element.validate_xpath(self.driver,'/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]')
-        if 'OK' == ind20:
-            self.driver.find_element_by_xpath('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout[2]').click()
-            time.sleep(3)   # 评论点赞
-        else:
-            pass
-        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_comment_close').click()
-        time.sleep(3)  # 取消
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/ll_like').click()
-        time.sleep(2)    # 点赞
 
-        self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
-        time.sleep(2)   # 返回
 
-        ind21 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_follow')
-        # 校验当前ugc的作者是否是我关注的人
-        if 'OK' == ind21:
-            print('ind21当前ugc作者是我关注的用户-----%s' % ind21)
-        else:
-            print('ind21当前ugc作者不是我关注的用户---%s' % ind21)
 
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]').click()
-        time.sleep(3)  # 用户头像
-        ind22 = element.validate_id(self.driver,'com.dealuck.cyy:id/magic_indicator')
-        if 'OK' == ind22:
-            print('ind22当前ugc作者是我关注的用户-----%s' % ind22)
-        else:
-            print('ind22当前ugc作者不是我关注的用户---%s' % ind22)
-        self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
-        time.sleep(3)   # 返回
 
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
-        time.sleep(3)  # 点赞
+
+
+
+
+
+
+
 

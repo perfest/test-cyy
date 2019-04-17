@@ -11,7 +11,7 @@ class topic_top:
 
     def topic_topic(self):
         self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[2]').click()
+            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout[2]').click()
         time.sleep(2)  # 点击话题
         pic1 = element.validate_xpath(driver=self.driver,
                                       value='/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout')
@@ -111,8 +111,15 @@ class topic_top:
             self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
             time.sleep(2)  # 返回视频页
 
-            self.driver.find_element_by_id('com.dealuck.cyy:id/tv_summary').click()
-            time.sleep(2)  # 点击正文跳转
+            pic30 = element.validate_id(self.driver, 'com.dealuck.cyy:id/fl_article')
+            if 'OK' == pic30:
+                self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+                time.sleep(2)  # 点击正文跳转
+            else:
+                self.driver.find_element_by_id('com.dealuck.cyy:id/ll_commodity').click()
+                time.sleep(2)  # 收起商品展示
+                self.driver.find_element_by_id('com.dealuck.cyy:id/fl_article').click()
+                time.sleep(2)  # 点击正文跳转
             pic9 = element.validate_id(driver=self.driver, value='com.dealuck.cyy:id/ll_title_user')
             if 'OK' == pic9:
                 print('pic9执行成功--------%s' % pic9)
@@ -345,14 +352,14 @@ class topic_top:
         time.sleep(3)   # 返回话题广场页
 
         self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]').click()
+            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]').click()
         time.sleep(2)  # 第一个热门品种
 
         inf = info.infos(driver=self.driver)
         inf.breedinfo()
 
         self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.TextView[2]').click()
+            '	/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout').click()
         time.sleep(2)  # 话题广场的第一个话题
         pic25 = element.validate_id(self.driver, 'com.dealuck.cyy:id/tv_detail')
         if 'OK' == pic25:
@@ -401,9 +408,9 @@ class topic_top:
         self.driver.find_element_by_id('com.dealuck.cyy:id/fl_back').click()
         time.sleep(3)  # 返回话题详情页
 
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
-        time.sleep(3)  # 页面点赞
+        # self.driver.find_element_by_xpath(
+        #     '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]').click()
+        # time.sleep(3)  # 页面点赞
 
         self.driver.find_element_by_id('com.dealuck.cyy:id/iv_back').click()
         time.sleep(2)  # 返回
